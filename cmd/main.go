@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"rss-feed/internal/handlers"
 	"rss-feed/internal/services"
 )
 
@@ -12,6 +13,7 @@ func main() {
 			"message": "pong",
 		})
 	})
+	r = handlers.SetupGeneralRoutes(r)
 
 	// Second GET method
 	r.GET("/rss-feed", func(c *gin.Context) {
